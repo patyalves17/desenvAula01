@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var tfNumber: UITextField!
+    @IBOutlet weak var tfNome: UITextField!
+    @IBOutlet weak var tfEmail: UITextField!
+    @IBOutlet weak var tfSenha: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
