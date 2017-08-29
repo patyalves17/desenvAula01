@@ -33,15 +33,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == tfNome{
+        /*if textField == tfNome{
             tfEmail.becomeFirstResponder()
         }else if textField == tfEmail{
             tfPassword.becomeFirstResponder()
         }else{
             doSignUp()
+        }*/
+        if textField == tfEmail && !validateEmail(email: textField.text!){
+            return false
+        } else {
+            return true
         }
-        return true
     }
+    func validateEmail(email:String) -> Bool{
+        return false
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.lowercased() == "a" {
+            return false
+        }else {
+            return true
+        }
+    }
+    
     @IBAction func doSignUp() {
         print("Fazendo o cadastro")
         view.endEditing(true)
